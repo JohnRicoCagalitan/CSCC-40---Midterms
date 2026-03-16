@@ -8,6 +8,11 @@ public class VacuumAgent {
         frontier.add(new Node(initialState, null, "START"));
 
         while (!frontier.isEmpty()) {
+            System.out.println("\n--- Current Fringe (Frontier) ---");
+            for (Node n : frontier) {
+                System.out.println("  > " + n.state + " | h(n) = " + n.state.getHeuristic());
+            }
+
             Node currentNode = frontier.poll();
             State currentState = currentNode.state;
 
